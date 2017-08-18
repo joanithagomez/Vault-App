@@ -7,27 +7,37 @@ class Page extends React.Component {
     return (
       <div className="container">
         <div className="title-banner">
-          <h1 className="title">Vault</h1>
+          <div className="title">Vault</div>
         </div>
         <div className="input-content">
-          <div className="service">
-            <h2>Service</h2>
-            <input className="serv" type="text" autocomplete="on" />
+          <div className="service-container">
+            <div className="service-label">Service</div>
+            <input className="serv-inputbox" type="text" autocomplete="on" />
           </div>
-          <div className="passphrase">
-            <h2>Passphrase</h2>
+          <div className="passphrase-container">
+            <div className="passphrase-label">Passphrase</div>
             <input
-              className="phrase"
+              className="phrase-inputbox"
               type="text "
               autocomplete="on"
               name="phrase "
             />
           </div>
         </div>
-      <div className="output-content">
-          <div className="password ">
-            <h3>Generated password</h3>
-            <input className="pwd" type="text " name="pwd" />
+        <div className="output-content">
+          <div className="password-container">
+            <div className="pwd-label">Generated password</div>
+            <input className="pwd-inputbox" type="text " name="pwd" />
+          </div>
+        </div>
+        <div className="settings-container">
+          <div className="btns">
+            <button className="round-btn">abc</button>
+            <button className="round-btn">ABC</button>
+            <button className="round-btn">123</button>
+            <button className="round-btn">!@#$%</button>
+            <button className="round-btn">-/_</button>
+            <button className="round-btn">SPACE</button>
           </div>
         </div>
       </div>
