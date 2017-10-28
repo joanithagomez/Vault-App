@@ -1,45 +1,95 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+var Vault = require('./vault.js');
+
 
 class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formvalues: {},
+      password: {
+        value: '', copied: false
+      }
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    event.preventDefault();    
+    let formvalues = this.state.formvalues;
+    let name = event.target.name;
+    let value = event.target.value;
+    formvalues[name] = value;
+  
+    this.setState({
+      formvalues,
+    });
+
+    if (this.state.formvalues["passphrase"] != undefined) {
+      this.state.password['value'] = new Vault({
+        phrase: this.state.formvalues["passphrase"]
+      }).generate(this.state.formvalues["service"]);
+    }  
+  
+  }
+  
+  handleCopy() {
+    console.log("password: " + this.state.formvalues["pwd"]);
+    var text = this.state.formvalues["pwd"];
+    text.select();
+    document.execCommand('copy');
+}
+
   render() {
+
     return (
       <div className="container">
+
         <div className="title-banner">
           <div className="title">Vault</div>
         </div>
-        <div className="input-content">
+        <div className="input-content col-12">
+
           <div className="service-container">
-            <div className="service-label">Service</div>
-            <input className="serv-inputbox" type="text" autocomplete="on" />
+            <div>
+            <label> Service
+                    <input className="serv-inputbox" type="text" name="service" value={this.state.service} onChange={this.handleChange.bind(this)} />
+              </label>
+              </div>
           </div>
-          <div className="passphrase-container">
-            <div className="passphrase-label">Passphrase</div>
-            <input
-              className="phrase-inputbox"
-              type="text "
-              autocomplete="on"
-              name="phrase "
-            />
+          <div className="passphrase-container">  
+            <div>
+                <label> Passphrase
+                    <input className="phrase-inputbox" type="password" name="passphrase" value={this.state.passphrase} onChange={this.handleChange.bind(this)}/>
+              </label>
+              </div>
           </div>
+          
         </div>
-        <div className="output-content">
+
+        <div className="output-content col-12">
           <div className="password-container">
-            <div className="pwd-label">Generated password</div>
-            <input className="pwd-inputbox" type="text " name="pwd" />
+            <label className="pwd-label">Generated password
+            <input  
+              className="pwd-inputbox"
+              name = "pwd"
+              type="text"
+              value={this.state.password['value']}
+              />
+            </label>  
           </div>
-        </div>
-        <div className="settings-container">
-          <div className="btns">
-            <button className="round-btn">abc</button>
-            <button className="round-btn">ABC</button>
-            <button className="round-btn">123</button>
-            <button className="round-btn">!@#$%</button>
-            <button className="round-btn">-/_</button>
-            <button className="round-btn">SPACE</button>
+
+          <CopyToClipboard onCopy={this.onCopy} text={this.state.password['value']}>    
+           <div className="btn-c"> <div className="copy-btn">Copy Password</div> </div>
+          </CopyToClipboard>
           </div>
-        </div>
+
+        
+        
       </div>
     );
   }
