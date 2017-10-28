@@ -37,13 +37,6 @@ class Page extends React.Component {
   
   }
   
-  handleCopy() {
-    console.log("password: " + this.state.formvalues["pwd"]);
-    var text = this.state.formvalues["pwd"];
-    text.select();
-    document.execCommand('copy');
-}
-
   render() {
 
     return (
@@ -83,7 +76,7 @@ class Page extends React.Component {
             </label>  
           </div>
 
-          <CopyToClipboard onCopy={this.onCopy} text={this.state.password['value']}>    
+          <CopyToClipboard text={this.state.password['value']}>    
            <div className="btn-c"> <div className="copy-btn">Copy Password</div> </div>
           </CopyToClipboard>
           </div>
