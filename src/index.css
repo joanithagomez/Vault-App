@@ -27,7 +27,7 @@ body {
 .title-banner {
   text-align: center;
   color: #c7ccd9;
-  padding: 8vh 0;
+  padding: 10vh 0;
   /* border: 1px solid pink; */
 }
 
@@ -56,7 +56,7 @@ body {
 .service-container,
 .passphrase-container,
 .password-container {
-  padding: 2%;
+  padding: 2vh;
   text-transform: uppercase;
   width: 60%;
   margin: 0 auto;
@@ -95,11 +95,11 @@ input {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 3%;
+  padding: 10vh 0;
 }
 .copy-btn {
   letter-spacing: 0;
-  width: 40%;
+  width: 12em;
   height: 6vh;
   display: flex;
   justify-content: center;
