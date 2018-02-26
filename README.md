@@ -1,7 +1,7 @@
 Vault
 =====
 
-An app that generates unique passwords for different accounts using one master password and service name. Inspired from https://getvau.lt/ this app is mobile friendly and keeps it simple.
+An app that generates unique passwords for different accounts using one master password and service name. Inspired by https://getvau.lt/ this app is mobile friendly and keeps it simple.
 
 ![Image](vault.png)
 
