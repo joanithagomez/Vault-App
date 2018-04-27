@@ -1,7 +1,7 @@
 Vault
 =====
 
-An app that generates unique passwords for different accounts using one master password and service name. Inspired from https://getvau.lt/ this app is mobile friendly and keeps it simple.
+An app that generates unique passwords for different accounts using one master password and service name. Inspired by https://getvau.lt/ this app is mobile friendly and keeps it simple.
 
 ![Image](vault.png)
 
@@ -20,6 +20,10 @@ Used
 Author
 ======
 Joanitha Christle Gomez
+
+License
+=======
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 Acknowledgements
 ==============
