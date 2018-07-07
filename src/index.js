@@ -97,8 +97,7 @@ class Page extends React.Component {
 
             <CopyToClipboard text={this.state.password["value"]}>
               <div className="btn-c">
-                {" "}
-                <div className="copy-btn">Copy Password</div>{" "}
+                <button className="copy-btn">Copy Password</button>
               </div>
             </CopyToClipboard>
           </div>
