@@ -56,7 +56,7 @@ body {
 .service-container,
 .passphrase-container,
 .password-container {
-  padding: 2vh;
+  padding: 2vh 0;
   text-transform: uppercase;
   width: 60%;
   margin: 0 auto;
@@ -96,13 +96,15 @@ input {
   justify-content: center;
   align-content: center;
   padding: 10vh 0;
+
 }
 
 .copy-btn {
   font-size: 1em;
   letter-spacing: 0;
-  width: 12%;
-  height: 60px;
+  width: auto;
+  padding: 2% 4%;
+
   border-radius: 2px;
   color: #313442;
   background-color: #e8eaf0;
