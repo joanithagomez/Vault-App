@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { PasswordToggle } from "./components/PasswordToggle";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 var Vault = require("./vault.js");
@@ -18,21 +19,24 @@ class Page extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange(event) {    
     event.preventDefault();
     let formvalues = this.state.formvalues;
     let name = event.target.name;
-    let value = event.target.value;
+    let value = event.target.value;    
     formvalues[name] = value;
 
     this.setState({
       formvalues
     });
 
+    var passwordCopy = Object.assign({}, this.state);
+    passwordCopy.password.value = new Vault({
+      phrase: this.state.formvalues["passphrase"]
+    }).generate(this.state.formvalues["service"]);
+
     if (this.state.formvalues["passphrase"] !== undefined) {
-      this.state.password["value"] = new Vault({
-        phrase: this.state.formvalues["passphrase"]
-      }).generate(this.state.formvalues["service"]);
+      this.setState({passwordCopy})      
     }
   }
 
@@ -71,12 +75,7 @@ class Page extends React.Component {
               <div>
                 <label>
                   Passphrase
-                  <input
-                    className="phrase-inputbox"
-                    type="password"
-                    name="passphrase"
-                    value={this.state.passphrase}
-                    onChange={this.handleChange.bind(this)}
+                  <PasswordToggle passphrase={this.state.formvalues['passphrase']} onchange={this.handleChange.bind(this)}
                   />
                 </label>
               </div>
