@@ -7,7 +7,7 @@ An app that generates unique passwords for different accounts using one master p
 
 Link
 ===
-https://joanithagomez.github.io/projects/vault/
+https://joanithagomez.github.io/Vault-App/
 
 Used
 ====
