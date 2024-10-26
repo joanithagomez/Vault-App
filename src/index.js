@@ -6,7 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 var Vault = require("./vault.js");
 
-class Page extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,16 +43,12 @@ class Page extends React.Component {
   render() {
     return (
       <div className="container">
-        <a href="https://github.com/joanithagomez/Vault-App">
-          <img
-            className="github-ribbon"
-            src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67"
-            alt="Fork me on GitHub"
-            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"
-          />
+        
+        <a href="https://github.com/joanithagomez/Vault-App" target="_blank"  rel="noopener noreferrer">
+          <img className="github-ribbon" width="160" height="160" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"/>
         </a>
         <div>
-          <div className=" title-banner">
+          <div className="title-banner">
             <div className="title">Vault</div>
           </div>
           <div className="input-content col-12">
@@ -105,4 +101,4 @@ class Page extends React.Component {
     );
   }
 }
-ReactDOM.render(<Page />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

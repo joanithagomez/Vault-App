@@ -20,7 +20,7 @@ export class PasswordToggle extends React.Component{
                 onChange={this.props.onchange}
             />
             <div className="show">
-                <label>Show <input className="custom-checkbox" type="checkbox" onClick={this.toggleShow}/></label> 
+                <label htmlFor="showCheckbox">Show <input id="showCheckbox" className="custom-checkbox" type="checkbox" onClick={this.toggleShow}/></label> 
 
             </div>
         </div>);
