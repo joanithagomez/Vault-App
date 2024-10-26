@@ -42,20 +42,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        
-        <a href="https://github.com/joanithagomez/Vault-App" target="_blank"  rel="noopener noreferrer">
-          <img className="github-ribbon" width="160" height="160" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"/>
-        </a>
-        <div>
+      <div>
           <div className="title-banner">
-            <div className="title">Vault</div>
+            <h1 className="title">Vault</h1>
           </div>
-          <div className="input-content col-12">
+        <div>
+          <section className="input-content col-12">
             <div className="service-container">
-              <div>
                 <label>
-                  {" "}
                   Service
                   <input
                     className="serv-inputbox"
@@ -65,19 +59,16 @@ class App extends React.Component {
                     onChange={this.handleChange.bind(this)}
                   />
                 </label>
-              </div>
             </div>
             <div className="passphrase-container">
-              <div>
                 <label>
                   Passphrase
                   <PasswordToggle passphrase={this.state.formvalues['passphrase']} onchange={this.handleChange.bind(this)}
                   />
                 </label>
-              </div>
             </div>
-          </div>
-          <div className="output-content col-12">
+          </section>
+          <section className="output-content col-12">
             <div className="password-container">
               <label className="pwd-label">
                 Generated password
@@ -95,7 +86,7 @@ class App extends React.Component {
                 <button className="copy-btn">Copy Password</button>
               </div>
             </CopyToClipboard>
-          </div>
+          </section>
         </div>
       </div>
     );

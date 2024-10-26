@@ -9,7 +9,9 @@
   box-sizing: border-box;
   font-family: "Lexend", sans-serif;
 }
-
+html {
+  background-color: black;
+}
 html,
 body {
   width: 100%;
@@ -17,9 +19,9 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  min-width: 400px;
+  /* min-width: 400px; */
   font-size: 16px;
-  background: linear-gradient(90deg, rgba(5, 19, 28, 0.8) 0%, rgba(3, 24, 38, 0.8) 100%), url(assets/square-dark.webp);
+  background: linear-gradient(90deg, rgba(5, 19, 28, 0.8) 0%, rgba(4, 33, 53, 0.8) 100%), url(assets/square-dark.webp);
   font-optical-sizing: auto;
 }
 .container {
@@ -46,6 +48,8 @@ body {
 .title {
   font-size: 3em;
   font-weight: 600;
+  letter-spacing: 1.4px;
+  margin: 0;
 }
 
 .input-content,
