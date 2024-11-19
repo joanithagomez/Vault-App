@@ -7,9 +7,9 @@
     "copy-to-clipboard": "^3.0.8",
     "crypto-js": "^3.1.2",
     "hoek": "^5.0.3",
-    "react": "^15.6.2",
+    "react": "^18.3.1",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-dom": "^15.6.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1"
   },
   "scripts": {
